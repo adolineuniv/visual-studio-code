@@ -379,7 +379,162 @@ footer {
   color: var(--creme);
   letter-spacing: 1px;
 }
+/* ===== LES VOYAGEURS (personnages cliquables) ===== */
+.personnages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
 
+.perso {
+  display: block;
+  width: 250px;
+  padding: 25px 20px 22px;
+  background-color: white;
+  border: 3px solid;
+  border-radius: 20px 20px 20px 4px;
+  box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+  text-decoration: none;
+  color: var(--brun);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.perso-camille { border-color: var(--sauge); }
+.perso-leo     { border-color: var(--sapin); }
+.perso-sport {
+  border-color: var(--moutarde);
+  margin: 0 auto;
+}
+.perso:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 25px rgba(74, 59, 47, 0.18);
+}
+
+.perso svg {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.perso:hover svg { transform: rotate(-4deg) scale(1.06); }
+
+.perso h3 {
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  color: var(--terracotta);
+}
+
+.perso p {
+  margin: 4px 0 14px;
+  font-size: 0.9rem;
+}
+
+.lien-perso {
+  display: inline-block;
+  padding: 6px 18px;
+  background-color: var(--terracotta);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.perso:hover .lien-perso { background-color: var(--sauge-fonce); }
+
+/* ===== AJOUTS PAGE 4 (SKI & VÉLO) ===== */
+.badge-region, .altitude {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 12px;
+  background-color: var(--creme);
+  color: var(--brun);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.altitude {
+  margin-bottom: 10px;
+  background-color: var(--sable);
+}
+
+.chiffres-ventoux {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.chiffre {
+  background-color: var(--sapin);
+  color: var(--creme);
+  padding: 16px 10px;
+  border-radius: 16px;
+}
+
+.chiffre strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--moutarde);
+}
+
+.chiffre span {
+  font-size: 0.85rem;
+}
+
+.niveau {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.niveau-dur     { background-color: var(--terracotta); }
+.niveau-costaud { background-color: var(--moutarde); color: var(--brun); }
+.niveau-doux    { background-color: var(--sauge); }
+
+.note-sommet {
+  margin: 25px auto 0;
+  max-width: 750px;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.grille-conseils-sport {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.liste-conseils {
+  text-align: left;
+}
+
+.liste-conseils h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.liste-conseils ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.liste-conseils li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
 /* ===== TÉLÉPHONE ===== */
 @media (max-width: 600px) {
   h1 { font-size: 2.3rem; }
@@ -387,3 +542,58 @@ footer {
   .liens a { margin: 0 8px; }
   .citation { border-radius: 60px 60px 20px 20px; font-size: 1.15rem; padding: 30px 20px; }
 }
+/* ===== CHIFFRES CLÉS CAMILLE (PAGE 2) ===== */
+.chiffres-camille {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.stat-camille {
+  background-color: white;
+  border: 2px solid var(--sauge);
+  border-top-width: 7px;
+  border-radius: 20px 20px 20px 4px;
+  padding: 20px 22px;
+  min-width: 155px;
+  box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-camille:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(74, 59, 47, 0.16);
+}
+
+.stat-camille strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--terracotta);
+}
+
+.stat-camille span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--brun);
+}
+
+.stat-sauge      { border-color: var(--sauge); }
+.stat-sauge strong { color: var(--sauge-fonce); }
+
+.stat-terracotta      { border-color: var(--terracotta); }
+.stat-terracotta strong { color: var(--terracotta); }
+
+.stat-moutarde      { border-color: var(--moutarde); }
+.stat-moutarde strong { color: #a77a1c; }
+
+.stat-sapin      { border-color: var(--sapin); }
+.stat-sapin strong { color: var(--sapin); }

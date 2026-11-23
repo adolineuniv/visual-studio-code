@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 3 : Ardèche et Serre-Ponçon en FlixBus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Styles propres aux pages "témoignage" (profil, chiffres, étapes, listes).
+       Ils reprennent la palette de style.css. Si ces règles existent déjà dans
+       votre style.css, ce bloc peut être supprimé. -->
+  <style>
+    .profil {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      text-align: left;
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 30px;
+      background-color: white;
+      border: 3px solid var(--sauge);
+      border-radius: 20px;
+      outline: 2px dashed var(--terracotta);
+      outline-offset: 8px;
+      box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+    }
+    .avatar {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background-color: var(--sable);
+      border: 4px solid var(--creme);
+      outline: 2px solid var(--sauge);
+      border-radius: 50%;
+    }
+    .profil-texte h2 { margin: 0 0 8px; font-size: 1.6rem; }
+    .profil-texte h2::after { display: none; }
+    .profil-texte p { margin: 0; font-style: italic; }
+
+    .chiffres {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .chiffre {
+      padding: 22px 10px;
+      background-color: var(--sable);
+      border: 2px dotted var(--brun);
+      border-radius: 50% 50% 14px 14px / 30% 30% 14px 14px;
+    }
+    .chiffre strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--terracotta);
+      line-height: 1.2;
+    }
+    .chiffre span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; }
+
+    .etape {
+      display: flex;
+      align-items: stretch;
+      gap: 25px;
+      margin-bottom: 30px;
+      text-align: left;
+      background-color: white;
+      border-radius: 20px 20px 20px 4px;
+      box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .etape:hover { transform: translateY(-6px); box-shadow: 0 14px 25px rgba(74, 59, 47, 0.18); }
+    .etape:nth-of-type(even) { flex-direction: row-reverse; }
+
+    .visuel {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 25px 10px;
+      border-radius: 0 100px 0 0;
+    }
+    .etape:nth-of-type(even) .visuel { border-radius: 100px 0 0 0; }
+    .visuel span { font-size: 3rem; }
+    .visuel p { margin: 5px 0 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+
+    .visuel-bus      { background: linear-gradient(180deg, #e9a75a, #c4704f); }
+    .visuel-ardeche  { background: linear-gradient(180deg, #8fae7a, #4f6f42); }
+    .visuel-canoe    { background: linear-gradient(180deg, #7fb0b5, #3f7c85); }
+    .visuel-lac      { background: linear-gradient(180deg, #6fb7d4, #2e6f94); }
+    .visuel-retour   { background: linear-gradient(180deg, #a58cc4, #6f5a8f); }
+
+    .etape-texte { padding: 25px 25px 25px 0; flex: 1; }
+    .etape:nth-of-type(even) .etape-texte { padding: 25px 0 25px 25px; }
+    .etape-texte h3 { margin: 10px 0; color: var(--sapin); }
+    .etape-texte p { margin: 0; font-size: 0.95rem; }
+
+    .jours {
+      display: inline-block;
+      padding: 3px 16px;
+      border-radius: 20px;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .jours-orange { background-color: var(--terracotta); }
+    .jours-sapin  { background-color: var(--sapin); }
+    .jours-mer    { background-color: #3f7c85; }
+    .jours-ocre   { background-color: #a77a1c; }
+    .jours-lavande{ background-color: #6f5a8f; }
+
+    .listes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      text-align: left;
+    }
+    .liste {
+      padding: 28px 28px 22px;
+      background-color: white;
+      border: 2px solid;
+      border-top-width: 8px;
+      border-radius: 20px 20px 20px 4px;
+      box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+    }
+    .liste h3 { margin-top: 0; }
+    .liste ul { margin: 0; padding-left: 20px; }
+    .liste li { margin-bottom: 6px; }
+    .liste-oui { border-color: var(--sauge); }
+    .liste-oui h3 { color: var(--sauge-fonce); }
+    .liste-non { border-color: var(--terracotta); }
+    .liste-non h3 { color: var(--terracotta); }
+
+    .retour { margin-bottom: 40px; }
+
+    @media (max-width: 600px) {
+      .profil { flex-direction: column; text-align: center; }
+      .etape, .etape:nth-of-type(even) { flex-direction: column; }
+      .visuel, .etape:nth-of-type(even) .visuel { flex-basis: auto; border-radius: 0 0 60px 0; }
+      .etape-texte, .etape:nth-of-type(even) .etape-texte { padding: 20px 22px 25px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== MENU ===== -->
+  <nav>
+    <span class="logo">❦ Au gré des saisons</span>
+    <div class="liens">
+      <a href="index.html">Accueil</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#conseils-leo">Ses conseils</a>
+      <a href="page2.html">Autre témoignage</a>
+    </div>
+  </nav>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="accueil">
+    <p class="sous-titre">Page 3</p>
+    <h1>9 jours en FlixBus, de l'Ardèche aux Alpes</h1>
+    <p class="intro">Le récit d'un voyage sans voiture, du canoë aux eaux d'un grand lac.</p>
+  </header>
+
+  <main>
+
+    <!-- ===== PROFIL ===== -->
+    <section class="profil">
+      <div class="avatar">🎒</div>
+      <div class="profil-texte">
+        <h2>Léo, 22 ans</h2>
+        <p>
+          « Pas de permis, pas de voiture, un petit budget d'étudiant : juste un sac à dos
+          et mon téléphone pour réserver les bus. Je pensais que ça compliquerait tout.
+          En vrai, regarder le paysage défiler par la fenêtre fait déjà partie du voyage. »
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CHIFFRES ===== -->
+    <div class="chiffres">
+      <div class="chiffre"><strong>9  </strong><span>jours</span></div>
+      <div class="chiffre"><strong>2  </strong><span>destinations</span></div>
+      <div class="chiffre"><strong>0  </strong><span>voiture</span></div>
+      <div class="chiffre"><strong>1  </strong><span>sac à dos</span></div>
+    </div>
+
+    <!-- ===== PARCOURS ===== -->
+    <section id="parcours">
+      <h2>Le parcours étape par étape</h2>
+      <p class="chapeau">Du bus de nuit aux gorges, puis aux rives du plus grand lac artificiel d'Europe.</p>
+
+      <article class="etape">
+        <div class="visuel visuel-bus">
+          <span>🚌</span>
+          <p>FlixBus</p>
+        </div>
+        <div class="etape-texte">
+          <span class="jours jours-orange">Jour 1</span>
+          <h3>Le départ : un bus, un casque, une fenêtre</h3>
+          <p>
+            Départ en fin de journée avec un trajet direct, un oreiller de voyage et
+            des sandwichs faits maison. Le Rhône qui apparaît au lever du jour, les
+            premières collines du Sud… J'ai vite compris que le trajet ferait partie
+            de l'aventure. Pour rejoindre l'Ardèche, j'ai ensuite pris un car régional
+            puis marché un bout de route avec mon sac sur le dos.
+          </p>
+        </div>
+      </article>
+
+      <article class="etape">
+        <div class="visuel visuel-ardeche">
+          <span>🌿</span>
+          <p>Ardèche</p>
+        </div>
+        <div class="etape-texte">
+          <span class="jours jours-sapin">Jours 2 à 4</span>
+          <h3>Ardèche : pierre, châtaigniers et villages perchés</h3>
+          <p>
+            Base arrière dans un petit camping près de Vallon-Pont-d'Arc. J'ai exploré
+            le village de Balazuc, accroché à sa falaise au-dessus de la rivière, puis
+            le Bois de Païolive, un labyrinthe de rochers et de chênes près des Vans.
+            Le soir, soupe de châtaignes et fromage de chèvre achetés au marché du coin.
+          </p>
+        </div>
+      </article>
+
+      <article class="etape">
+        <div class="visuel visuel-canoe">
+          <span>🛶</span>
+          <p>Gorges</p>
+        </div>
+        <div class="etape-texte">
+          <span class="jours jours-mer">Jour 5</span>
+          <h3>Les gorges de l'Ardèche en canoë</h3>
+          <p>
+            Passage sous le Pont d'Arc, cette arche de pierre taillée par la rivière,
+            puis des heures de descente entre falaises calcaires, plages de galets et
+            vautours qui planent au-dessus de nos têtes. Pause baignade, pique-nique
+            sur un banc de sable, et un silence que je n'avais jamais entendu en ville.
+          </p>
+        </div>
+      </article>
+
+      <article class="etape">
+        <div class="visuel visuel-lac">
+          <span>⛵</span>
+          <p>Serre-Ponçon</p>
+        </div>
+        <div class="etape-texte">
+          <span class="jours jours-lavande">Jours 6 à 8</span>
+          <h3>Serre-Ponçon : le grand bleu des Alpes</h3>
+          <p>
+            Cap sur les Hautes-Alpes avec deux bus et une correspondance, puis un car
+            local jusqu'aux rives du lac. Eau d'un bleu irréel, montagnes tout autour,
+            voiles blanches au loin : l'impression d'être à la mer… en altitude.
+            J'ai marché jusqu'à un belvédère, baigné mes pieds au bord de l'eau et
+            admiré la petite chapelle posée sur son îlot, au crépuscule.
+          </p>
+        </div>
+      </article>
+
+      <article class="etape">
+        <div class="visuel visuel-retour">
+          <span>🌅</span>
+          <p>Retour</p>
+        </div>
+        <div class="etape-texte">
+          <span class="jours jours-ocre">Jour 9</span>
+          <h3>Le retour, la tête pleine de paysages</h3>
+          <p>
+            Dernier bus, dernier regard sur les montagnes. J'ai dormi presque tout le
+            trajet, le sourire aux lèvres et les chaussures encore pleines de sable.
+            Mon portefeuille, lui, n'a presque pas souffert.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== CONSEILS DE LÉO ===== -->
+    <section id="conseils-leo">
+      <h2>Ce que Léo referait (ou pas)</h2>
+      <p class="chapeau">Les leçons d'un voyage sans voiture.</p>
+
+      <div class="listes">
+        <div class="liste liste-oui">
+          <h3>✔ Je referais</h3>
+          <ul>
+            <li>Réserver mes billets de bus quelques semaines à l'avance</li>
+            <li>Choisir un seul point de chute et rayonner autour</li>
+            <li>Voyager léger : un seul sac à dos</li>
+            <li>Profiter des trajets pour lire, dormir et regarder dehors</li>
+          </ul>
+        </div>
+        <div class="liste liste-non">
+          <h3>✘ J'éviterais</h3>
+          <ul>
+            <li>Ne pas vérifier les horaires des cars locaux (ils sont rares)</li>
+            <li>Partir sans batterie externe</li>
+            <li>Enchaîner trop d'étapes : mieux vaut rester deux jours de plus</li>
+            <li>Oublier ses sandales d'eau pour les galets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RETOUR ===== -->
+    <section class="retour">
+      <p>Envie de partir à votre tour ?</p>
+      <a class="bouton" href="index.html">Retour à l'accueil</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>❦ Fait avec soin, entre forêts et champs de blé 🌾 ❦</p>
+  </footer>
+
+</body>
+</html>

@@ -8,21 +8,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- Cette partie concerne l'entête du site ; la première chose que les visiteurs voient. On retrouve le titre et des informations plus générales pour tout le site comme la langue dans laquelle est le site ou encore l'alphabet utilisé -- !> 
+<body>
 
-  <! -- ===== MENU ===== -->
-    <nav>
+<!-- Cette partie concerne l'entête du site ; la première chose que les visiteurs voient. On retrouve le titre et des informations plus générales pour tout le site comme la langue dans laquelle est le site ou encore l'alphabet utilisé -->
+
+  <!-- ===== MENU ===== -->
+  <nav>
     <span class="logo">❦ Au gré des saisons</span>
     <div class="liens">
       <a href="#conseils">Conseils</a>
       <a href="#regions">Destinations</a>
       <a href="#jura">Jura</a>
       <a href="#saisons">Saisons</a>
-      <a href="page2.html">Témoignage</a>
+      <a href="page2.html">Témoignage Camille</a>
+      <a href="page3.html">Témoignage Léo</a>
+      <a href="page4.html">Ski &amp; Vélo</a>
       <a href="#contact">Contact</a>
+
+
     </div>
   </nav>
-<!-- définit les catégories en haut créant un endroit cliquable pour aller directement aux différents onglets -- !> 
+<!-- définit les catégories en haut créant un endroit cliquable pour aller directement aux différents onglets -->
+
   <!-- ===== ACCUEIL + CONSEIL DE VOYAGE ===== -->
   <header class="accueil">
     <p class="sous-titre">Carnet de voyage en France</p>
@@ -38,9 +45,129 @@
       </p>
     </div>
   </header>
-<!-- -->
+
   <main>
-<!-- Cette partie est une phrase accroche dans un cadre qui a pour but de donner envie aux utilisateurs de lire la suite du site, -- !>
+<!-- Cette partie est une phrase accroche dans un cadre qui a pour but de donner envie aux utilisateurs de lire la suite du site -->
+    <!-- ===== LES VOYAGEURS ===== -->
+    <section id="voyageurs">
+      <h2>Rencontrez nos voyageurs</h2>
+      <p class="chapeau">Cliquez sur un personnage pour lire son témoignage.</p>
+
+      <div class="personnages">
+
+        <!-- Camille -->
+        <a class="perso perso-camille" href="page2.html" aria-label="Lire le témoignage de Camille">
+          <svg viewBox="0 0 160 200" role="img" aria-labelledby="titre-camille">
+            <title id="titre-camille">Dessin de Camille</title>
+            <!-- chignon -->
+            <circle cx="80" cy="36" r="15" fill="#5a3a2a"/>
+            <!-- corps -->
+            <path d="M30 200 Q30 122 80 122 Q130 122 130 200 Z" fill="#8a9a7b"/>
+            <!-- cou -->
+            <rect x="72" y="104" width="16" height="22" fill="#f1c9a5"/>
+            <!-- foulard -->
+            <path d="M60 122 Q80 138 100 122 L100 134 Q80 150 60 134 Z" fill="#c4704f"/>
+            <!-- tête -->
+            <circle cx="80" cy="80" r="32" fill="#f1c9a5"/>
+            <!-- cheveux -->
+            <path d="M48 80 Q46 42 80 42 Q114 42 112 80 Q102 60 80 60 Q58 60 48 80 Z" fill="#5a3a2a"/>
+            <!-- yeux -->
+            <circle cx="69" cy="84" r="2.8" fill="#4a3b2f"/>
+            <circle cx="91" cy="84" r="2.8" fill="#4a3b2f"/>
+            <!-- joues -->
+            <circle cx="62" cy="94" r="5" fill="#d9a9a0" opacity="0.7"/>
+            <circle cx="98" cy="94" r="5" fill="#d9a9a0" opacity="0.7"/>
+            <!-- sourire -->
+            <path d="M71 96 Q80 104 89 96" fill="none" stroke="#4a3b2f" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- carnet -->
+            <g transform="rotate(-12 118 165)">
+              <rect x="104" y="148" width="28" height="36" rx="4" fill="#d9a441"/>
+              <rect x="108" y="154" width="20" height="3" fill="#f7f1e5"/>
+              <rect x="108" y="161" width="20" height="3" fill="#f7f1e5"/>
+              <rect x="108" y="168" width="14" height="3" fill="#f7f1e5"/>
+            </g>
+          </svg>
+          <h3>Camille</h3>
+          <p>34 ans · road trip en voiture</p>
+          <span class="lien-perso">Lire son témoignage →</span>
+        </a>
+
+        <!-- Léo -->
+        <a class="perso perso-leo" href="page3.html" aria-label="Lire le témoignage de Léo">
+          <svg viewBox="0 0 160 200" role="img" aria-labelledby="titre-leo">
+            <title id="titre-leo">Dessin de Léo</title>
+            <!-- sac à dos -->
+            <rect x="34" y="112" width="92" height="76" rx="22" fill="#d9a441"/>
+            <!-- corps -->
+            <path d="M30 200 Q30 122 80 122 Q130 122 130 200 Z" fill="#2f5a4c"/>
+            <!-- bretelles -->
+            <path d="M58 126 L56 192" stroke="#d9a441" stroke-width="7" stroke-linecap="round"/>
+            <path d="M102 126 L104 192" stroke="#d9a441" stroke-width="7" stroke-linecap="round"/>
+            <!-- cou -->
+            <rect x="72" y="104" width="16" height="22" fill="#e8b98f"/>
+            <!-- tête -->
+            <circle cx="80" cy="80" r="32" fill="#e8b98f"/>
+            <!-- cheveux -->
+            <path d="M48 76 Q48 40 82 42 Q114 42 112 76 Q104 58 82 58 Q58 58 48 76 Z" fill="#3a2a20"/>
+            <!-- casque audio -->
+            <path d="M46 82 Q44 44 80 44 Q116 44 114 82" fill="none" stroke="#4a3b2f" stroke-width="5" stroke-linecap="round"/>
+            <rect x="39" y="76" width="10" height="20" rx="5" fill="#c4704f"/>
+            <rect x="111" y="76" width="10" height="20" rx="5" fill="#c4704f"/>
+            <!-- yeux -->
+            <circle cx="69" cy="84" r="2.8" fill="#4a3b2f"/>
+            <circle cx="91" cy="84" r="2.8" fill="#4a3b2f"/>
+            <!-- joues -->
+            <circle cx="62" cy="94" r="5" fill="#d9a9a0" opacity="0.7"/>
+            <circle cx="98" cy="94" r="5" fill="#d9a9a0" opacity="0.7"/>
+            <!-- sourire -->
+            <path d="M71 96 Q80 104 89 96" fill="none" stroke="#4a3b2f" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <h3>Léo</h3>
+          <p>22 ans · voyage en FlixBus</p>
+          <span class="lien-perso">Lire son témoignage →</span>
+        </a>
+
+      </div>
+    </section>
+    <!-- Ski & Vélo (Page 4) -->
+        <a class="perso perso-sport" href="page4.html" aria-label="Découvrir le ski de fond et les cols à vélo">
+          <svg viewBox="0 0 160 200" role="img" aria-labelledby="titre-sport">
+            <title id="titre-sport">Dessin de skis et d'un vélo</title>
+            <!-- Fond montagne douce -->
+            <path d="M15 160 L55 85 L90 135 L115 100 L145 160 Z" fill="#e6d8bf"/>
+            <path d="M55 85 L43 108 L55 103 L67 108 Z" fill="#ffffff"/>
+            <path d="M115 100 L105 118 L115 114 L125 118 Z" fill="#ffffff"/>
+
+            <!-- Paire de skis croisés (à gauche) -->
+            <g transform="rotate(-14 48 110)">
+              <rect x="42" y="32" width="8" height="145" rx="4" fill="#c4704f"/>
+              <path d="M42 36 Q46 22 50 36" fill="none" stroke="#c4704f" stroke-width="5" stroke-linecap="round"/>
+              <rect x="41" y="95" width="10" height="16" rx="2" fill="#4a3b2f"/>
+            </g>
+            <g transform="rotate(8 58 110)">
+              <rect x="54" y="34" width="8" height="145" rx="4" fill="#d9a441"/>
+              <path d="M54 38 Q58 24 62 38" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round"/>
+              <rect x="53" y="97" width="10" height="16" rx="2" fill="#4a3b2f"/>
+            </g>
+
+            <!-- Vélo (en bas à droite) -->
+            <!-- Roues -->
+            <circle cx="72" cy="152" r="20" fill="none" stroke="#4a3b2f" stroke-width="4"/>
+            <circle cx="72" cy="152" r="3" fill="#4a3b2f"/>
+            <circle cx="132" cy="152" r="20" fill="none" stroke="#4a3b2f" stroke-width="4"/>
+            <circle cx="132" cy="152" r="3" fill="#4a3b2f"/>
+            <!-- Cadre -->
+            <path d="M72 152 L96 152 L114 126 L88 126 Z" fill="none" stroke="#2f5a4c" stroke-width="4.5" stroke-linejoin="round"/>
+            <path d="M96 152 L85 118 M132 152 L111 116" stroke="#2f5a4c" stroke-width="4.5" stroke-linecap="round"/>
+            <!-- Selle & Guidon -->
+            <path d="M78 118 L92 118" stroke="#c4704f" stroke-width="5" stroke-linecap="round"/>
+            <path d="M107 116 L120 116 Q126 116 125 123" fill="none" stroke="#4a3b2f" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <h3>Ski &amp; Vélo</h3>
+          <p>Hiver &amp; été · montagne</p>
+          <span class="lien-perso">Explorer la page →</span>
+        </a>
+
     <!-- ===== CONSEILS ===== -->
     <section id="conseils">
       <h2>Mes conseils pour voyager en France</h2>
@@ -84,8 +211,9 @@
         </article>
       </div>
     </section>
-<!-- Cette partie concerne les conseils de voyage, une fois qu'elle est appliquée avec le style, elle est sous forme de cases donnant envie aux utilisateurs de cliquer pour connaitre davantage -- !> 
-    <! -- ===== CITATION ===== -->
+<!-- Cette partie concerne les conseils de voyage, une fois qu'elle est appliquée avec le style, elle est sous forme de cases donnant envie aux utilisateurs de cliquer pour connaitre davantage -->
+
+    <!-- ===== CITATION ===== -->
     <blockquote class="citation">
       « La nature ne se presse pas, et pourtant tout s'accomplit. »
       <cite>— Lao Tseu</cite>
@@ -128,8 +256,9 @@
         </article>
       </div>
     </section>
-<!-- Cette section concerne les conseils de voyage en lui-même : il adapte les suggestions en fonction de la saison, de la  catégorie des vacances (mer, montagnes etc.) -- ! > 
-    <! -- ===== FOCUS JURA ===== -->
+<!-- Cette section concerne les conseils de voyage en lui-même : il adapte les suggestions en fonction de la saison, de la catégorie des vacances (mer, montagnes etc.) -->
+
+    <!-- ===== FOCUS JURA ===== -->
     <section id="jura" class="focus-jura">
       <span class="etiquette-jura">✦ Focus ✦</span>
       <h2>Le Jura, terre de sapins et de saveurs</h2>
@@ -158,7 +287,8 @@
         </div>
       </div>
     </section>
-<! --  partie qui donne des détails sur le jura en exemple d'endroit à visiter en france ; chaque sous-partie est composée d'une icone et de descriptif sur le lieu précis ainsi que son nom. -- !>
+<!-- partie qui donne des détails sur le jura en exemple d'endroit à visiter en france ; chaque sous-partie est composée d'une icone et de descriptif sur le lieu précis ainsi que son nom. -->
+
     <!-- ===== SAISONS ===== -->
     <section id="saisons">
       <h2>Au fil des saisons</h2>
@@ -180,10 +310,12 @@
     </section>
 
   </main>
-  <! -- Section contact avec possibilité de mettre des informations de contact comme les sites normaux. --!> 
+<!-- Section contact avec possibilité de mettre des informations de contact comme les sites normaux. -->
+
   <footer>
     <p>❦ Fait avec soin, entre forêts et champs de blé 🌾 ❦</p>
   </footer>
-<!-- cette section finale se situe sur le bandeau tout en bas du site et indique "avec humour" une information de fabrication pour finir le site-- !> 
+<!-- cette section finale se situe sur le bandeau tout en bas du site et indique "avec humour" une information de fabrication pour finir le site -->
+
 </body>
 </html>
