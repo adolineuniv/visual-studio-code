@@ -1,0 +1,389 @@
+/* ===== PALETTE ===== */
+:root {
+  --creme: #f7f1e5;
+  --sable: #e6d8bf;
+  --sauge: #8a9a7b;
+  --sauge-fonce: #5f6f52;
+  --terracotta: #c4704f;
+  --moutarde: #d9a441;
+  --rose: #d9a9a0;
+  --brun: #4a3b2f;
+  --sapin: #2f5a4c;
+}
+
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-color: var(--creme);
+  color: var(--brun);
+  line-height: 1.8;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ===== MENU (reste collé en haut) ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 30px;
+  background-color: var(--sauge-fonce);
+  color: white;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+}
+
+.liens a {
+  color: var(--creme);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-left: 22px;
+  transition: color 0.3s;
+}
+
+.liens a:hover { color: var(--moutarde); }
+
+/* ===== ACCUEIL ===== */
+.accueil {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(217, 169, 160, 0.45) 0, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(138, 154, 123, 0.45) 0, transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(217, 164, 65, 0.35) 0, transparent 30%),
+    var(--sable);
+}
+
+.sous-titre {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.85rem;
+  color: var(--terracotta);
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.4rem;
+  color: var(--sauge-fonce);
+  margin: 10px 0;
+}
+
+.intro {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+}
+
+/* Le conseil de bienvenue : double cadre */
+.conseil-accueil {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 35px 30px;
+  background-color: var(--creme);
+  border: 3px solid var(--terracotta);
+  border-radius: 20px;
+  outline: 2px dashed var(--sauge);
+  outline-offset: 8px;
+  box-shadow: 0 10px 30px rgba(74, 59, 47, 0.2);
+}
+
+.conseil-accueil .etiquette {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--terracotta);
+  color: white;
+  padding: 4px 20px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.conseil-accueil p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ===== CONTENU ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+}
+
+section {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.1rem;
+  color: var(--terracotta);
+  margin-bottom: 5px;
+}
+
+h2::after {
+  content: "❦";
+  display: block;
+  font-size: 1.2rem;
+  color: var(--sauge);
+}
+
+.chapeau {
+  font-style: italic;
+  margin-bottom: 35px;
+}
+
+/* ===== CARTES AVEC CADRES COLORÉS ===== */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.cadre {
+  background-color: white;
+  padding: 30px 22px;
+  border-radius: 20px 20px 20px 4px;
+  border: 2px solid;
+  border-top-width: 8px;
+  box-shadow: 0 6px 15px rgba(74, 59, 47, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cadre:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 25px rgba(74, 59, 47, 0.18);
+}
+
+.icone { font-size: 2.2rem; }
+.cadre h3 { margin: 10px 0; }
+.cadre p { margin: 0; font-size: 0.95rem; }
+
+.cadre-sauge { border-color: var(--sauge); }
+.cadre-sauge h3 { color: var(--sauge-fonce); }
+
+.cadre-terracotta { border-color: var(--terracotta); }
+.cadre-terracotta h3 { color: var(--terracotta); }
+
+.cadre-moutarde { border-color: var(--moutarde); }
+.cadre-moutarde h3 { color: #a77a1c; }
+
+.cadre-rose { border-color: var(--rose); }
+.cadre-rose h3 { color: #b0675a; }
+
+/* ===== CITATION ===== */
+.citation {
+  margin: 0 auto 80px;
+  max-width: 700px;
+  padding: 35px 40px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: white;
+  background-color: var(--sauge);
+  border-radius: 200px 200px 20px 20px;
+  border: 6px double var(--creme);
+  outline: 3px solid var(--sauge);
+}
+
+.citation cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* ===== RÉGIONS ===== */
+.regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 22px;
+}
+
+.region {
+  min-height: 260px;
+  padding: 25px 16px;
+  border-radius: 120px 120px 16px 16px;  /* forme d'arche bohème */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  border: 4px solid var(--creme);
+  outline: 2px solid var(--sauge);
+  transition: transform 0.3s;
+}
+
+.region:hover { transform: scale(1.04); }
+
+.region h3 { margin: 5px 0; font-size: 1.5rem; }
+.region p { margin: 0; font-size: 0.85rem; line-height: 1.5; }
+
+.badge {
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--brun);
+  padding: 2px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.region-lavande  { background: linear-gradient(180deg, #a58cc4, #6f5a8f); }
+.region-mer      { background: linear-gradient(180deg, #7fb0b5, #3f7c85); }
+.region-montagne { background: linear-gradient(180deg, #9fbf9a, #587a55); }
+.region-foret    { background: linear-gradient(180deg, #d9a05b, #a15a2c); }
+.region-jura     { background: linear-gradient(180deg, #6f9a8a, #2f5a4c); }
+
+/* ===== FOCUS JURA ===== */
+.focus-jura {
+  position: relative;
+  padding: 55px 30px 40px;
+  background-color: #eaf0e6;
+  border: 3px solid var(--sapin);
+  border-radius: 20px;
+  outline: 2px dashed var(--sauge);
+  outline-offset: 8px;
+}
+
+.focus-jura h2 { color: var(--sapin); }
+
+.etiquette-jura {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--sapin);
+  color: white;
+  padding: 4px 22px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.lieux {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.lieu {
+  background-color: white;
+  padding: 22px 18px;
+  border-radius: 16px;
+  border-bottom: 5px solid var(--sapin);
+  box-shadow: 0 4px 12px rgba(74, 59, 47, 0.1);
+}
+
+.lieu h3 {
+  color: var(--sapin);
+  margin: 8px 0;
+  font-size: 1.15rem;
+}
+
+.lieu p { margin: 0; font-size: 0.9rem; }
+
+/* ===== SAISONS ===== */
+.saisons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.saison {
+  padding: 25px 10px;
+  border-radius: 50% 50% 14px 14px / 30% 30% 14px 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  border: 2px dotted var(--brun);
+}
+
+.saison span { display: block; font-size: 2rem; }
+
+.saison small {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.printemps { background-color: #f3d9dd; }
+.ete       { background-color: #f6e3a8; }
+.automne   { background-color: #ecc3a0; }
+.hiver     { background-color: #d8e4e8; }
+
+/* ===== CONTACT ===== */
+.cadre-contact {
+  padding: 50px 30px;
+  background-color: white;
+  border: 3px solid var(--moutarde);
+  border-radius: 20px;
+  outline: 2px dashed var(--terracotta);
+  outline-offset: 8px;
+  margin-bottom: 60px;
+}
+
+.bouton {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 34px;
+  background-color: var(--terracotta);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.bouton:hover {
+  background-color: var(--sauge-fonce);
+  transform: translateY(-3px);
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--sauge-fonce);
+  color: var(--creme);
+  letter-spacing: 1px;
+}
+
+/* ===== TÉLÉPHONE ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 2.3rem; }
+  nav { justify-content: center; }
+  .liens a { margin: 0 8px; }
+  .citation { border-radius: 60px 60px 20px 20px; font-size: 1.15rem; padding: 30px 20px; }
+}
